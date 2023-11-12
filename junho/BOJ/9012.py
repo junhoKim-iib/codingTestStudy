@@ -1,12 +1,9 @@
 import sys
 
-T = int(sys.stdin.readline())
-
-for _ in range(T):
+for _ in range(int(sys.stdin.readline())):
     cnt = 0
-    ps = sys.stdin.readline().strip()
 
-    for ch in ps:
+    for ch in sys.stdin.readline().strip():
         if ch == '(':
             cnt += 1
         else:
@@ -15,8 +12,4 @@ for _ in range(T):
                 break
             cnt -= 1
 
-            
-    if cnt == 0:
-        print('YES')
-    else: 
-        print("NO")
+    print("YES" if cnt==0 else "NO")
