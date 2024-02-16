@@ -3,16 +3,12 @@ import sys
 
 input = sys.stdin.readline
 
-hobbit_list = []
+hobbit_list = [int(input()) for _ in range(9)]
 
-for _ in range(9):
-    hobbit_list.append(int(input()))
-
-for i in combinations(hobbit_list, 2):
-    result = [hobbit for hobbit in hobbit_list if hobbit not in i]
-
-    if sum(result) == 100:
-        for hobbit in sorted(result):
+for combi in combinations(hobbit_list, 7):
+    
+    if sum(combi) == 100:
+        for hobbit in sorted(combi):
             print(hobbit)
         break
 
